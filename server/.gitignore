@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.log
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+.Python
+
+# VSCode or IDE settings
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env variables
+.env
+.env.*
+
+# MyPy, Pyright
+.mypy_cache/
+.pyright/
+
+# Testing
+.coverage
+.tox/
+htmlcov/
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# FastAPI docs cache (if any)
+*.sqlite3
