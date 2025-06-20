@@ -42,3 +42,4 @@ build/
 
 # FastAPI docs cache (if any)
 *.sqlite3
+.vercel
