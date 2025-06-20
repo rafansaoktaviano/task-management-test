@@ -4,7 +4,6 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from supabase import create_client, Client
-from mangum import Mangum
 
 
 
@@ -132,6 +131,3 @@ async def toggle_complete_task(id: str, request: Request):
         content={ "message": "Task marked as not completed" if getData.data["is_complete"] else "Task marked as completed", "isError": False}
     )
 
-
-
-handler = Mangum(app)
