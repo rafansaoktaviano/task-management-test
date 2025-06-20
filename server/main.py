@@ -26,6 +26,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {"message": "FastAPI server is running"}
+
 @app.get("/api/tasks")
 async def tasks_data(status: str = Query(None)):
     from datetime import datetime, timedelta, timezone
