@@ -16,6 +16,9 @@ url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
 supabase = create_client(url, key)
 
+@app.get("/", tags=["Root"])
+async def read_root():
+    return {"message": "Welcome to this fantastic app!"}
 
 app.add_middleware(
     CORSMiddleware,
@@ -25,9 +28,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def root():
-    return {"message": "FastAPI server is running"}
 
 @app.get("/api/tasks")
 async def tasks_data(status: str = Query(None)):
