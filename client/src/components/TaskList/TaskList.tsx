@@ -1,4 +1,3 @@
-import React from "react";
 import { useTasksStore } from "../../store/taskStore";
 import { MdDelete } from "react-icons/md";
 const TaskList = () => {

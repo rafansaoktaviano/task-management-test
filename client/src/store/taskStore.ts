@@ -32,7 +32,7 @@ export const useTasksStore = create<TasksStore>((set) => ({
 
       const response = await axios.get(`${SERVER_URL}/tasks`);
 
-      set((state) => ({
+      set(() => ({
         taskList: response.data.data || [],
         loading: false,
       }));

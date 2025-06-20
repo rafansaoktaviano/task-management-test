@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ModalAddTask from "../../components/ModalAddTask/ModalAddTask";
 import { FiPlus, FiDownload } from "react-icons/fi";
 import { useTasksStore } from "../../store/taskStore";
@@ -7,7 +7,8 @@ import TaskList from "../../components/TaskList/TaskList";
 const TaskPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { taskList, loading, getTasksAsync, handleDownloadPdf } = useTasksStore();
+  const { taskList, loading, getTasksAsync, handleDownloadPdf } =
+    useTasksStore();
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
