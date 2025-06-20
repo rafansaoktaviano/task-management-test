@@ -7,10 +7,10 @@ from supabase import create_client, Client
 
 
 
+app = FastAPI()
 load_dotenv()
 
 
-app = FastAPI()
 
 url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
@@ -28,8 +28,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-@app.get("/api/tasks")
+@app.get("/tasks")
 async def tasks_data(status: str = Query(None)):
     from datetime import datetime, timedelta, timezone
 
@@ -55,7 +54,7 @@ async def tasks_data(status: str = Query(None)):
 
 
 
-@app.post("/api/task")
+@app.post("/task")
 async def add_task(request: Request):
     body = await request.json()
 
@@ -89,7 +88,7 @@ async def add_task(request: Request):
         content={"message": "Task added successfully!", "isError": False, "data": response.data[0]}
     )
 
-@app.delete("/api/task/{id}")
+@app.delete("/task/{id}")
 async def delete_task(id: str, request: Request):
     
 
@@ -106,7 +105,7 @@ async def delete_task(id: str, request: Request):
     )
 
 
-@app.post("/api/complete-task/{id}")
+@app.post("/complete-task/{id}")
 async def toggle_complete_task(id: str, request: Request):
 
     getData = (
